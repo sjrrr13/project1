@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Browse</title>
+    <link href="../css/reset.css" rel="stylesheet" type="text/css">
+    <link href="../css/nav.css" rel="stylesheet" type="text/css">
+    <link href="../css/browse.css" rel="stylesheet" type="text/css">
+    <link href="../css/footer2.css" rel="stylesheet" type="text/css">
+    <script>
+        var cities = new Array();
+        cities['China'] = ['Shanghai', 'Kunming', 'Beijing', 'Yantai'];
+        cities['Japan'] = ['Tokyo', 'Osaka', 'Kamakura'];
+        cities['Italy'] = ['Roma','Milan','Venice','Florence'];
+        cities['American'] = ['New York','San Francisco', 'Washington'];
+        function initCountry() {
+            for(var i in cities){
+                var countryObj = document.getElementById("country");
+                var option = new Option(i, i);
+                countryObj.add(option);
+            }
+        }
+        function changeCity() {
+            var countryName = document.getElementById("country").value;
+            var city = document.getElementById("city");
+            city.innerHTML = "";
+            for(var j in cities){
+                if(j == countryName){
+                    for(var k in cities[j]){
+                        var option = new Option(cities[j][k], cities[j][k]);
+                        var city = document.getElementById("city");
+                        city.add(option);
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="initCountry()">
+<header>
+    <nav>
+        <a href="home.html" class="nav">Home</a>
+        <a href="browse.html" class="current">Browse</a>
+        <a href="search.html" class="nav">Search</a>
+        <div class="dropdown">
+            <Label class="drop">My Account</Label>
+            <div class="dropdown-content">
+                <a href="post.html"><img src="../../images/icons/post.jpg" alt="post" class="icon">
+                    Post</a>
+                <a href="myAlbum.html"><img src="../../images/icons/album.jpg" alt="post" class="icon">
+                    My Album</a>
+                <a href="favorite.html"><img src="../../images/icons/favorite.jpg" alt="post" class="icon">
+                    My Favorite</a>
+                <a href="../../index.html"><img src="../../images/icons/login.jpg" alt="post" class="icon">
+                    Sign In</a>
+            </div>
+        </div>
+    </nav>
+</header>
+<section class="content">
+    <aside>
+        <div class="search">
+            <input type="search" placeholder="Search By Title">
+            <a onclick="alert('已显示搜索结果')"><img src="../../images/icons/search.jpg" alt="search"></a>
+        </div>
+        <div class="shortcut">
+            <label>Hot Country</label>
+            <ul>
+                <li><a onclick="alert('已筛选')">China</a></li>
+                <li><a onclick="alert('已筛选')">Italy</a></li>
+                <li><a onclick="alert('已筛选')">Japan</a></li>
+                <li class="last"><a onclick="alert('已筛选')">American</a></li>
+            </ul>
+        </div>
+        <div class="shortcut">
+            <label>Hot City</label>
+            <ul>
+                <li><a onclick="alert('已筛选')">Shanghai</a></li>
+                <li><a onclick="alert('已筛选')">Venice</a></li>
+                <li><a onclick="alert('已筛选')">Tokyo</a></li>
+                <li class="last"><a onclick="alert('已筛选')">New York</a></li>
+            </ul>
+        </div>
+        <div class="shortcut">
+            <label>Hot Content</label>
+            <ul>
+                <li><a onclick="alert('已筛选')">Scenery</a></li>
+                <li><a onclick="alert('已筛选')">Building</a></li>
+                <li><a onclick="alert('已筛选')">Animal</a></li>
+                <li class="last"><a onclick="alert('已筛选')">People</a></li>
+            </ul>
+        </div>
+    </aside>
+    <div class="right">
+        <div class="filter">
+            <select id="country" onchange="changeCity()">
+                <option value="0">-Choose a country-</option>
+            </select>
+            <select id="city">
+                <option value="0">-Choose a city-</option>
+            </select>
+            <select id="content">
+                <option value="0">-Choose a content-</option>
+                <option value="scenery">Scenery</option>
+                <option value="building">Building</option>
+                <option value="Animal">Animal</option>
+                <option value="People">People</option>
+            </select>
+            <input type="button" value="Filter" onclick="alert('已筛选')">
+        </div>
+        <div class="images">
+            <div><a href="detail.html">
+                <img src="../../images/travel-images/normal/small/5855174537.jpg" alt="picture"></a></div>
+            <div><a href="detail.html">
+                <img src="../../images/travel-images/normal/small/5857398054.jpg" alt="picture"></a></div>
+            <div><a href="detail.html">
+                <img src="../../images/travel-images/normal/small/5856697109.jpg" alt="picture"></a></div>
+            <div><a href="detail.html">
+                <img src="../../images/travel-images/normal/small/8710320515.jpg" alt="picture"></a></div>
+            <div><a href="detail.html">
+                <img src="../../images/travel-images/normal/small/9496560520.jpg" alt="picture"></a></div>
+            <div><a href="detail.html">
+                <img src="../../images/travel-images/normal/small/9496787858.jpg" alt="picture"></a></div>
+            <div><a href="detail.html">
+                <img src="../../images/travel-images/normal/small/9496799098.jpg" alt="picture"></a></div>
+            <div><a href="detail.html">
+                <img src="../../images/travel-images/normal/small/9502741759.jpg" alt="picture"></a></div>
+            <div><a href="detail.html">
+                <img src="../../images/travel-images/normal/small/9504449928.jpg" alt="picture"></a></div>
+            <div><a href="detail.html">
+                <img src="../../images/travel-images/normal/small/9504606628.jpg" alt="picture"></a></div>
+            <div><a href="detail.html">
+                <img src="../../images/travel-images/normal/small/9504448540.jpg" alt="picture"></a></div>
+            <div><a href="detail.html">
+                <img src="../../images/travel-images/normal/small/8711623884.jpg" alt="picture"></a></div>
+        </div>
+        <div class="page">
+            <pre><a onclick="alert('已换页')">&lt;</a>  <span>1</span>  2  3  4  5  ...  <a onclick="alert('已换页')">&gt;</a></pre>
+        </div>
+    </div>
+</section>
+<footer>
+    Copyright&copy;2020web应用基础19302010035佘家瑞
+</footer>
+</body>
+</html>
